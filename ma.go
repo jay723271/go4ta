@@ -56,3 +56,16 @@ func MA(close []float64, timePeriod int, maType int) ([]float64, error) {
 
 	return result, nil
 }
+
+/*
+常用均线类型数值（TA-Lib标准）：
+0: SMA
+1: EMA
+2: WMA
+3: DEMA
+4: TEMA
+5: TRIMA
+6: KAMA
+7: MAMA
+8: T3
+*/
