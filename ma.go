@@ -59,13 +59,13 @@ func MA(close []float64, timePeriod int, maType int) ([]float64, error) {
 
 /*
 常用均线类型数值（TA-Lib标准）：
-0: SMA
-1: EMA
-2: WMA
-3: DEMA
-4: TEMA
-5: TRIMA
-6: KAMA
-7: MAMA
-8: T3
+0: SMA (简单移动平均)
+1: EMA (指数移动平均)
+2: WMA (加权移动平均)
+3: DEMA (双指数移动平均)
+4: TEMA (三指数移动平均)
+5: TRIMA (三角移动平均)
+6: KAMA (考夫曼自适应移动平均)
+7: MAMA (MESA 自适应移动平均)
+8: T3 (三倍平滑移动平均)
 */
