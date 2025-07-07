@@ -17,6 +17,17 @@ import (
 // @param close      - 收盘价序列
 // @param timePeriod - 计算周期（如20）
 // @param maType     - 均线类型（如0=SMA，1=EMA等，见TA-Lib文档）
+//
+//	0: SMA (简单移动平均)
+//	1: EMA (指数移动平均)
+//	2: WMA (加权移动平均)
+//	3: DEMA (双指数移动平均)
+//	4: TEMA (三指数移动平均)
+//	5: TRIMA (三角移动平均)
+//	6: KAMA (考夫曼自适应移动平均)
+//	7: MAMA (MESA 自适应移动平均)
+//	8: T3 (三倍平滑移动平均)
+//
 // @return []float64 - MA结果序列，与输入等长，未计算部分为0。
 // @return error     - 如果输入数据无效或 C 库调用失败，则返回错误。
 func MA(close []float64, timePeriod int, maType int) ([]float64, error) {
@@ -56,16 +67,3 @@ func MA(close []float64, timePeriod int, maType int) ([]float64, error) {
 
 	return result, nil
 }
-
-/*
-常用均线类型数值（TA-Lib标准）：
-0: SMA (简单移动平均)
-1: EMA (指数移动平均)
-2: WMA (加权移动平均)
-3: DEMA (双指数移动平均)
-4: TEMA (三指数移动平均)
-5: TRIMA (三角移动平均)
-6: KAMA (考夫曼自适应移动平均)
-7: MAMA (MESA 自适应移动平均)
-8: T3 (三倍平滑移动平均)
-*/
