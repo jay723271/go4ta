@@ -2,6 +2,7 @@ package go4ta
 
 import (
 	"encoding/csv"
+	"math"
 	"os"
 	"strconv"
 	"testing"
@@ -60,21 +61,14 @@ func TestSTOCH(t *testing.T) {
 	eps := 0.1
 	for i := range expectK {
 		if expectK[i] >= 0 {
-			if abs(k[i]-expectK[i]) > eps {
+			if math.Abs(k[i]-expectK[i]) > eps {
 				t.Errorf("SlowK[%d] 期望: %.2f, 实际: %.2f", i, expectK[i], k[i])
 			}
 		}
 		if expectD[i] >= 0 {
-			if abs(d[i]-expectD[i]) > eps {
+			if math.Abs(d[i]-expectD[i]) > eps {
 				t.Errorf("SlowD[%d] 期望: %.2f, 实际: %.2f", i, expectD[i], d[i])
 			}
 		}
 	}
-}
-
-func abs(x float64) float64 {
-	if x < 0 {
-		return -x
-	}
-	return x
 }
